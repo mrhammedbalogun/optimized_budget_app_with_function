@@ -37,7 +37,7 @@ def register():
         users_database["password"] = password
         users_database["account_balance"] = 0
 
-        print(f"\n\nCongrat, your account as been successfully created. Your account number is {account_no}. Kindly login below with your username: '{username}':  \n")
+        print(f"\n\nCongrat, your account as been successfully created. Your account number is {account_no}. Kindly login below with your username: '{username}': ")
 
         login()
         fullname = first_name + " " + last_name
@@ -115,7 +115,7 @@ def menu():
 
 
 
-def main():
+def start_menu():
 
         
     while True:
@@ -127,8 +127,14 @@ def main():
             
         elif select_data == 'rg':
             register()
-        
 
 
+def init():
+    start_menu()       
+
+init()
+
+
+"""
 if __name__ == "__main__":
-	main()
+	main()"""
