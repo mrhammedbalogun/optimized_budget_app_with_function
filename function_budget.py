@@ -5,14 +5,14 @@ users_database = {}
 
 def login():
     username = input("\n\nPlease input your username below: \n\n>").lower()
-    if username == users_database["username"]:
+    if username == users_database.get("username"):
         password = input("\n\nPlease input your password: \n\n>").lower()
         if password == users_database["password"]:
             menu()
         else:
             print("\n\nLooks like you entered a wrong password\n\n")
     else:
-        print("\n\nLogin not correct\n\n")
+        print("\nLooks like such account do not exit. Kindly input RG to register.\n")
 
 
 def register():
@@ -40,9 +40,7 @@ def register():
         print(f"\n\nCongrat, your account as been successfully created. Your account number is {account_no}. Kindly login below with your username: '{username}': ")
 
         login()
-        fullname = first_name + " " + last_name
-
-    return fullname
+        
 
 def quit_option():
     your_option = input("\nKindly select an option below. Enter MM or LO\n\n [mm] To go back to Menu\n [lo] To log out\n\n\n>").lower()
@@ -112,6 +110,7 @@ def menu():
         user_profile()
     else:
         print("Invalid selection")
+        menu()
 
 
 
@@ -133,8 +132,3 @@ def init():
     start_menu()       
 
 init()
-
-
-"""
-if __name__ == "__main__":
-	main()"""
